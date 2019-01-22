@@ -42,9 +42,10 @@ then
         echo "Usage: sudo rotateClient username email@mail.com"
         exit
 else
-echo "Deleting user : "$1
-bash /home/$USER/bin/shellscript/deleteClient.sh $1
+user=`echo $1 | sed 's/\.//g'`
+echo "Deleting user : "$user
+bash /home/$USER/bin/shellscript/deleteClient.sh $user
 sleep 5s
-echo "Creating user : "$1 "with mail: "$2
-bash /home/$USER/bin/shellscript/createClient.sh $1 $2
+echo "Creating user : "$user "with mail: "$2
+bash /home/$USER/bin/shellscript/createClient.sh $user $2
 fi
