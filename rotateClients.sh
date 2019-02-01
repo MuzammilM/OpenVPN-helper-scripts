@@ -27,7 +27,6 @@ then
                         sleep 5s
                         echo "Creating user : "$username "with mail: "$email
                         bash /home/$USER/bin/shellscript/createClient.sh $username
-                        java -jar /home/$USER/bin/jars/emailAttachments.jar /home/$USER/config/emailProps.properties $email momin.muzammil@xyz.com "VPN Credentials for "`date +"%Y-%m-%d"` "PFA of your ovpn files.Please do not share or distribute .For office use only. Incase of assitance contact momin.muzammil@xyz.com" /home/$USER/certificates/$username.ovpn
                 done
         exit
         else
