@@ -81,7 +81,7 @@ then
                         echo $username $email
                         echo "*******************************************************"
                         createClient $username
-                        echo -e "PFA of your ovpn files.\nPlease do not share or distribute .\nFor office use only.\nIncase of assitance contact momin.muzammil@mail.com" | s-nail -r USER -s "VPN Credentials for "`date +"%Y-%m-%d"` -a "$homeDir/$username.ovpn" $2
+                        echo -e "PFA of your ovpn files.\nPlease do not share or distribute .\nFor office use only.\nIncase of assitance contact momin.muzammil@mail.com" | s-nail -r USER -s "VPN Credentials for "`date +"%Y-%m-%d"` -a $homeDir/$username.ovpn $2
                 done
                 exit
         else
@@ -96,4 +96,4 @@ then
         exit
 fi
 createClient $1
-echo -e "PFA of your ovpn files.\nPlease do not share or distribute .\nFor office use only.\nIncase of assitance contact momin.muzammil@mail.com" | s-nail -r USER -s "VPN Credentials for "`date +"%Y-%m-%d"` -a "$homeDir/$1.ovpn" $2
+echo -e "PFA of your ovpn files.\nPlease do not share or distribute .\nFor office use only.\nIncase of assitance contact momin.muzammil@mail.com" | s-nail -r USER -s "VPN Credentials for "`date +"%Y-%m-%d"` -a $homeDir/$1.ovpn $2
