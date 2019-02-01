@@ -80,8 +80,8 @@ then
                         email=`echo $server|cut -d "|" -f 2`
                         echo $username $email
                         echo "*******************************************************"
-#                       createClient $username
-#                       java -jar /home/$USER/bin/jars/emailAttachments.jar /home/$USER/config/emailProps.properties $email momin.muzammil@mail.com "VPN Credentials for "`date +"%Y-%m-%d"` "PFA of your ovpn files.Please do not share or distribute .For office use only. Incase of assitance contact momin.muzammil@mail.com" /home/$USER/certificates/$username.ovpn
+                        createClient $username
+                        echo -e "PFA of your ovpn files.\nPlease do not share or distribute .\nFor office use only.\nIncase of assitance contact momin.muzammil@mail.com" | s-nail -r USER -s "VPN Credentials for "`date +"%Y-%m-%d"` -a "$homeDir/$username.ovpn" $2
                 done
                 exit
         else
@@ -96,4 +96,4 @@ then
         exit
 fi
 createClient $1
-java -jar /home/$USER/bin/jars/emailAttachments.jar /home/$USER/config/emailProps.properties $2 momin.muzammil@mail.com "VPN Credentials for "`date +"%Y-%m-%d"` "PFA of your ovpn files.Please do not share or distribute .For office use only. Incase of assitance contact momin.muzammil@mail.com" /home/$USER/certificates/$1.ovpn
+echo -e "PFA of your ovpn files.\nPlease do not share or distribute .\nFor office use only.\nIncase of assitance contact momin.muzammil@mail.com" | s-nail -r USER -s "VPN Credentials for "`date +"%Y-%m-%d"` -a "$homeDir/$1.ovpn" $2
